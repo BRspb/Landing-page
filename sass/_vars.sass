@@ -1,5 +1,25 @@
 @import "bourbon"
 
 $btn: #14b75a
-$accent: #ecb124
-$main: #414e5b
+=btn-d($perc: %, $opac: 1) // color button darken
+	color: rgba(darken($btn, $perc), $opac)
+=btn-l($perc: %, $opac: 1) // color button lighten
+	color: rgba(lighten($btn, $perc), $opac)
+
+$accent: #FDFDFD
+=accent-d($perc: %, $opac: 1) // color accent darken
+	color: rgba(darken($accent, $perc), $opac)
+=accent-l($perc: %, $opac: 1) // color accent lighten
+	color: rgba(lighten($accent, $perc), $opac)
+
+$main: #2a5a85
+=main-d($perc: %, $opac: 1) // color main darken
+	color: rgba(darken($main, $perc), $opac)
+=main-l($perc: %, $opac: 1) // color main lighten
+	color: rgba(lighten($main, $perc), $opac)
+
+=tr($time: .4s)  // transition: all .4s	ease
+	transition: all $time	ease
+
+=fz($px)
+	font-size: em($px* 1px)

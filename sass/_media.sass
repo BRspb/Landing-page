@@ -9,12 +9,44 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.mnu_line
+    padding-top: 60px
+	.slider-wrap
+		.slider-nav
+			div
+				margin: 0 20px
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	
+@media only screen and (max-width : 767px)
+	.logo, .phone
+		text-align: center
+	.logo
+	 img
+	 	padding-bottom: 15px
+	div ul, nav ul
+		padding: 10px 0 0 15px
+	.slider
+		.slide-content
+			padding-top: 100px
+		.slide h2
+			text-align: center
+		p
+			max-width: 60%
+		.button
+			top: 25px
+	.slide-img-wrap
+		img
+			max-width: 35%
+			position: absolute
+			right: 15px
+			bottom: 15px
+		.img-3
+			max-width: 30%
+
+
+
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -36,16 +68,41 @@
 		-ms-animation: none !important
 		animation: none !important
 
+@media only screen and (max-width : 550px)
+	.slider
+		.slide
+			padding-top: 50px
+	.logo
+		display: none
+	.slide-img-wrap
+		img
+			display: none
+		.button
+			top: 35px
+	.slide-content
+		text-align: center
+		ul
+			li
+				text-align: left
+		p
+			max-width: 100%
+	.slider-wrap
+		.slider-nav
+			div
+				top: 180px
+				margin: 0 12px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.slider
+		.slide h2
+			font-size: em(38px)
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
 
+	/**/
 
 /*==========  Mobile First Method  ==========*/
 

@@ -1,5 +1,28 @@
 $(function() {
 
+	var owl = $(".slider");
+	owl.owlCarousel({
+		loop:true,
+		items:1,
+		autoplay:true,
+		autoplayTimeout:4500,
+		itemClass: "slide-wrap",
+		nav:true,
+		navText: ""
+	});
+	$(".next").click(function(){
+		owl.trigger('next.owl.carousel');
+	})
+	$(".prev").click(function(){
+		owl.trigger('prev.owl.carousel');
+	});
+
+	$(".toggle-mnu").click(function() {
+		$(this).toggleClass("on");
+		$(".main-mnu").slideToggle();
+		return false;
+	});
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
