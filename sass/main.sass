@@ -28,7 +28,43 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-//Custom Styles Here
+.light
+	padding-bottom: 80px
+	background:		
+		+accent-d(10)
+	.light-top
+		padding: 10px 0
+		background-color: $accent
+		text-align: center
+		h2
+			display: block
+			width: 100%
+.about
+	+main-d(30)
+	.avat-wrap
+		width: 225px
+		height: 260px
+		border: 2px $main solid
+		border-radius: 14px
+		position: relative
+		background-color: $accent
+		margin: 40px auto
+		text-align: center
+		.avat
+			background-size: cover
+			width: 94%
+			height: 94%
+			border-radius: 7px
+			position: absolute
+			left: 3%
+			top: 3%
+		p
+			position: relative
+			bottom: -245px
+	.cont-about
+		padding-top: 40px
+		text-align: center
+
 
 
 //ALWAYS END

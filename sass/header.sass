@@ -1,7 +1,6 @@
 @import "bourbon"
 @import "vars.sass"
 
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -35,13 +34,6 @@ h3, h4
 h4
 	font-size: em(15px)
 
-.main-head
-	// background-image: url("../img/bg_top.jpg")
-	// background:
-		// +main-l(50, .6)
-	// background-size: cover
-	// background-position: top center
-
 .mnu_line
 	padding-top: 48px
 
@@ -60,26 +52,66 @@ nav, div
 		display: inline-block		
 		list-style-type: none
 
+// header	
+// 	max-height: 100vh
 .main-mnu
 	text-align: center
-	+fz(16)
-	>	ul
-		> li
-			> a
-				display: block
-				padding: 10px 18px
-				+main-l(25)
-				+tr
-				&:hover
-					+main-d(10)
-			&.active
-				a
-					+main-d(10)
+	+fz(18)
+.mnu_line
+	.anim-mnu
+		padding: 0
+		margin: auto
+		width: 100%
+		.anim-wrap >a			
+			color: $main
+		.fa
+			+fz(16)
+			margin-right: 2px
+			position: relative
+			top: 1px			
+		a
+			+fz(16)
+			display: block
+			font-family: "OpenSansLight", sans-serif
+			height: 100%
+			position: relative
+			margin: 10px auto
+			text-transform: none
+		li
+			height: 60px
+			overflow: hidden
+			display: inline-block
+			text-align: center
+			margin: 9px auto
+			+tr(.6s)
+			&:nth-child(1)
+				width: 19%			
+			&:nth-child(2)
+				width: 18%
+			&:nth-child(3)
+				width: 17%
+			&:nth-child(4)
+				width: 22%
+			&:nth-child(5)
+				width: 20%
+			&:hover
+				box-shadow: 1px 1px 2px rgba(0,0,0,0.2)			
+				background:
+					+main-l(10, .1)
+				+tr(.6s)
+				a, .fa
+					+fz(19)
+					+main-l(10)
+					text-shadow: 0px 0px 13px #fff
+					+tr
+		.active
+			a
+				+main-d(10)
 
 .phone
+	color: $main
 	text-align: right
 	.phone-wrap
-		color: $main
 		font-family: "Exo2Bold", sans-serif
 		+fz(22)
 		.fa
@@ -87,14 +119,21 @@ nav, div
 			position: relative
 			top: 2px
 			margin-right: 2px
-	.callback
-		+main-l(25)
-		+fz(15)
+	.vk
+		color: $main
+		+fz(16)
 		+tr
-		border-bottom: 1px dashed
+		border-bottom: 1px dashed		
 		&:hover
 			text-decoration: none
 			border-color: transparent
+		.fa
+			+fz(25)
+			position: relative
+			top: 2px
+			margin-right: 5px
+	span
+		color: $accent
 
 .top-pannel
 	position: absolute
@@ -106,7 +145,7 @@ nav, div
 		position: relative
 	.slider-nav
 	 	+accent-l(10, .5)
-	 	font-size: 36px
+	 	font-size: 45px
 	 	position: absolute
 	 	width: 100%
 	 	z-index: 1
@@ -127,7 +166,7 @@ nav, div
 	overflow-x: hidden
 	.owl-dots
 		position: absolute
-		bottom: 40px
+		bottom: 30px
 		width: 100%
 		text-align: center
 		.owl-dot
@@ -135,8 +174,7 @@ nav, div
 			margin: 0 3px
 			width: 14px
 			height: 14px
-			background:
-				+main-d(10)
+			background-color: $main
 			border-radius: 10em
 			cursor: pointer
 			transition: background-color .25s ease
@@ -156,16 +194,15 @@ nav, div
 				transform: scale(1)
 	.slide
 		color: $main
-		padding-bottom: 110px
+		padding-bottom: 100px
 		padding-top: 120px
-		min-height: 680px
 		position: relative
 		h2
 			font-family: "OpenSansLight", sans-serif
 			font-size: em(48px)
 			margin-top: 0
 			line-height: em(19px)
-			margin-bottom: 20px
+			margin-bottom: 25px
 			position: relative
 			left: 100px
 			opacity: 0
@@ -181,9 +218,12 @@ nav, div
 			opacity: 0
 			transition: all 1.5s ease
 			transition-delay: .15s
+			p
+				margin: 0
 		&-bg
 			position: absolute
 			background-size: cover
+			height: 100%
 			top: 0
 			left: 0
 			right: 0
@@ -198,6 +238,7 @@ nav, div
 				height: 100%
 				position: absolute
 		&-content
+			min-height: 465px
 			position: relative
 			z-index: 1
 			padding-top: 50px
@@ -251,11 +292,11 @@ nav, div
 
 // Toggle menu Begin
 
-.toggle-mnu 
+.toggle-mnu
   display: block
-  width: 28px
-  height: 28px
-  margin: 10px 0 0 10px
+  width: 25px
+  height: 25px
+  margin: 6px 0 0 8px
   z-index: 4
   color: $main
 
@@ -298,4 +339,91 @@ nav, div
 	position: fixed
 	width: 100%
 	z-index: 2
-// Toggle menu End    
+	color: $main
+	b
+		position: absolute
+		top: 5px
+		left: 50px
+		+fz(18)
+// Toggle menu End 
+
+.hidden-mnu
+	position: fixed
+	width: 100%
+	top: 30px
+	left: 0
+	display: none
+	z-index: 1
+	background-color: $accent
+	>ul
+		padding: 0
+	.anim-mnu
+		padding: 0
+		margin: 20px auto
+		width: 500px
+
+		.anim-wrap >a			
+			color: $main
+		.fa
+			+fz(20)
+			text-shadow: 0px 0px 1px #333
+			margin-right: 2px
+			position: relative
+			top: 2px
+			+tr
+		a
+			+fz(16)
+			font-family: "OpenSansLight", sans-serif
+			text-align: left
+			display: block
+			width: 70%
+			height: 100%
+			position: relative
+			margin: 10px auto
+			text-transform: none
+		li
+			max-width: 300px
+			height: 60px
+			overflow: hidden
+			display: block
+			background-color: $accent
+			box-shadow: 1px 1px 2px rgba(0,0,0,0.2)
+			margin-bottom: 4px
+			border-bottom: 4px solid $main
+			+tr(.6s)
+			&:hover
+				background: $main
+				a, .fa
+					color: $accent
+					text-shadow: 0px 0px 13px #fff
+					opacity: .8
+					+tr
+				a
+					+fz(19)
+					text-transform: uppercase
+				.fa
+					+fz(21)
+			&:last-child
+				margin-bottom: 0
+
+.scils
+	text-align: center
+	padding: 0
+	position: relative
+	background: $main
+	padding-bottom: 35px
+	p
+		+fz(18)
+		text-align: center
+		margin: 10px 0
+		color: $accent
+	.sc-item
+		border: $accent 2px solid
+		border-radius: 4px
+		margin: 35px auto 0
+		max-width: 200px
+		.fa
+			padding-top: 20px
+			+fz(50)
+	a
+		color: $accent
